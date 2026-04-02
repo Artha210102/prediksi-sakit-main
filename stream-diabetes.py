@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 
 # Load the model
-diabetes_model = pickle.load(open('/content/diabetes.csv', 'rb'))
+diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 
 # Title of the web app
 st.title('Prediksi Diabetes')
