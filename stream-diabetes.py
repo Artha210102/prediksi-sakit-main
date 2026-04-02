@@ -1,8 +1,17 @@
 import pickle
 import streamlit as st
 
-# Load the model
-diabetes_model = pickle.load(open('diabetes_model.sav2', 'rb'))
+# Load dataset
+df = pd.read_csv('diabetes.csv')
+
+X = df.drop('Outcome', axis=1)
+y = df['Outcome']
+
+model = LogisticRegression()
+model.fit(X, y)
+
+# Simpan model
+pickle.dump(model, open('diabetes_model.sav', 'wb'))
 
 # Title of the web app
 st.title('Prediksi Diabetes')
